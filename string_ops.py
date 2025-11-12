@@ -1,15 +1,17 @@
-from pydantic import BaseModel
 from fastapi import FastAPI
-import uvicorn
+# from pydantic import BaseModel
+# import uvicorn
 import json
 app = FastAPI()
 
-@app.get("/revers/{text}")
-def reverse(text:str)->str:
-    dict = {}
-    dict["original"] = text
-    dict["revers_string"] = text[::-1]
-    return dict
+@app.get("/reverse")
+def reverse(text:str):
+     dict = {}
+     dict["original"] = text
+     dict["revers_string"] = text[::-1]
+     str = json.dumps(dict)
+     return str
+
 
 def reverse_str(s: str) -> str:
     pass
