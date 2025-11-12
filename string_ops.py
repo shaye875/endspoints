@@ -12,9 +12,9 @@ def reverse(text:str):
      str = json.dumps(dict)
      return str
 
-
-def reverse_str(s: str) -> str:
-    pass
+@app.get("/uppercase/{text}")
+def to_upper(text: str):
+    return {"original":text,"uppercased":text.upper()}
 
 def remove_vowels(s: str) -> str:
     pass
